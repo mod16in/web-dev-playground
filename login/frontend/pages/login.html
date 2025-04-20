@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login / Register</title>
+    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="left-side">
+                <div class="toggle-left">
+                    <h1>Hello, Welcome!</h1>
+                    <span>Don't have an account?</span>
+                    <button onclick="showRegistration()" id="register">Register</button>
+                </div>
+                <div class="toggle-right hide">
+                    <h1>Welcome Back!</h1>
+                    <span>Already have an account?</span>
+                    <button onclick="showLogin()" id="register">Login</button>
+                </div>
+            </div>
+            <div class="login">
+                <div class="right-content">
+                    <h3>Login</h3>
+                    <form class="form">
+                        <div class="input username-icon">
+                            <input type="text" name="username" id="username" placeholder="Username">
+                            <span class="fa fa-user"></span>
+                        </div>
+                        <div class="input password-icon">
+                            <input type="text" name="password" id="password" placeholder="Password">
+                            <span class="fa fa-lock"></span>
+                        </div>
+                        <p>Forgot Password?</p>
+                        <button>Login</button>
+                    </form>
+                    <span>or login with social platforms</span>
+                    <div class="social-platforms">
+                        <div class="login-google logo">
+                            <img src="../assets/google-logo.svg.svg" alt="">
+                        </div>
+                        <div class="login-facebook logo">
+                            <img src="../assets/facebook-logo.svg.svg" alt="">
+                        </div>
+                        <div class="login-twitter logo">
+                            <img src="../assets/twiiter-logo.svg.svg" alt="">
+                        </div>
+                        <div class="login-linkedin logo">
+                            <img src="../assets/github-logo.svg.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="register hide">
+                <div class="right-content">
+                    <h3>Registration</h3>
+                    <form class="form">
+                        <div class="input username-icon">
+                            <input type="text" name="username" id="username" placeholder="Username">
+                            <span class="fa fa-user"></span>
+                        </div>
+                        <div class="input email-icon">
+                            <input type="text" name="email" id="email" placeholder="Email">
+                            <span class="fa-solid fa-envelope"></span>
+                        </div>
+                        <div class="input password-icon">
+                            <input type="text" name="password" id="password" placeholder="Password">
+                            <span class="fa fa-lock"></span>
+                        </div>
+                        <button>Register</button>
+                    </form>
+                    <span>or register with social platforms</span>
+                    <div class="social-platforms">
+                        <div class="login-google logo">
+                            <img src="../assets/google-logo.svg.svg" alt="">
+                        </div>
+                        <div class="login-facebook logo">
+                            <img src="../assets/facebook-logo.svg.svg" alt="">
+                        </div>
+                        <div class="login-twitter logo">
+                            <img src="../assets/twiiter-logo.svg.svg" alt="">
+                        </div>
+                        <div class="login-linkedin logo">
+                            <img src="../assets/github-logo.svg.svg" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let showLogin = function () {
+            let leftToggle = document.getElementsByClassName('toggle-left')[0];
+            leftToggle.classList.add('show');
+            leftToggle.classList.remove('hide');
+
+            let rightToggle = document.getElementsByClassName('toggle-right')[0];
+            rightToggle.classList.add('hide');
+            rightToggle.classList.remove('show');
+
+            let showLogin = document.getElementsByClassName('login')[0];
+            showLogin.classList.add('show');
+            showLogin.classList.remove('hide');
+
+            let hideRegistration = document.getElementsByClassName('register')[0];
+            hideRegistration.classList.add('hide');
+            hideRegistration.classList.remove('show');
+
+            let parent = document.getElementsByClassName('left-side')[0];
+            parent.style.transform = 'translateX(0%)';
+            parent.style.borderRadius = '30px 80px 80px 30px';
+        }
+
+        let showRegistration = function () {
+            let leftToggle = document.getElementsByClassName('toggle-left')[0];
+            leftToggle.classList.add('hide');
+            leftToggle.classList.remove('show');
+
+            let rightToggle = document.getElementsByClassName('toggle-right')[0];
+            rightToggle.classList.add('show');
+            rightToggle.classList.remove('hide');
+
+            let hideLogin = document.getElementsByClassName('login')[0];
+            hideLogin.classList.add('hide');
+            hideLogin.classList.remove('show');
+
+            let showRegistration = document.getElementsByClassName('register')[0];
+            showRegistration.classList.add('show');
+            showRegistration.classList.remove('hide');
+            
+            let parent = document.getElementsByClassName('left-side')[0];
+            parent.style.transform = 'translateX(100%)';
+            parent.style.borderRadius = '80px 30px 30px 80px';
+        }
+    </script>
+</body>
+</html>
